@@ -1,0 +1,102 @@
+{
+  "name": "loglens-vscode",
+  "displayName": "LogLens",
+  "description": "Advanced log file viewer with filtering, search, and syntax highlighting",
+  "version": "1.0.0",
+  "publisher": "ranjan98",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "log",
+    "logs",
+    "viewer",
+    "filter",
+    "tail",
+    "debug"
+  ],
+  "activationEvents": [
+    "onLanguage:log"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "loglens.openViewer",
+        "title": "LogLens: Open Log Viewer"
+      },
+      {
+        "command": "loglens.filterByLevel",
+        "title": "LogLens: Filter by Log Level"
+      },
+      {
+        "command": "loglens.tailFile",
+        "title": "LogLens: Tail Log File"
+      },
+      {
+        "command": "loglens.clearHighlights",
+        "title": "LogLens: Clear Highlights"
+      }
+    ],
+    "configuration": {
+      "title": "LogLens",
+      "properties": {
+        "loglens.errorColor": {
+          "type": "string",
+          "default": "#ff6b6b",
+          "description": "Highlight color for ERROR level"
+        },
+        "loglens.warnColor": {
+          "type": "string",
+          "default": "#ffd93d",
+          "description": "Highlight color for WARN level"
+        },
+        "loglens.infoColor": {
+          "type": "string",
+          "default": "#6bcb77",
+          "description": "Highlight color for INFO level"
+        },
+        "loglens.debugColor": {
+          "type": "string",
+          "default": "#4d96ff",
+          "description": "Highlight color for DEBUG level"
+        },
+        "loglens.autoTail": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically tail log files when opened"
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "log",
+        "aliases": ["Log", "log"],
+        "extensions": [".log", ".logs"],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ranjan98/loglens-vscode"
+  },
+  "author": "ranjan98",
+  "license": "MIT"
+}
