@@ -136,7 +136,6 @@ function isLogFile(document: vscode.TextDocument): boolean {
 
 function applyHighlights(editor: vscode.TextEditor) {
   const document = editor.document;
-  const text = document.getText();
 
   for (const level of logLevels) {
     const decorations: vscode.DecorationOptions[] = [];
@@ -162,7 +161,6 @@ function applyHighlights(editor: vscode.TextEditor) {
 }
 
 function updateStatusBar(document: vscode.TextDocument) {
-  const text = document.getText();
   let errorCount = 0;
   let warnCount = 0;
   let infoCount = 0;
