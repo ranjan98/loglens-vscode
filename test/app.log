@@ -1,0 +1,10 @@
+2024-01-15 10:00:01 [INFO] Application started
+2024-01-15 10:00:02 [DEBUG] Loading configuration from config.json
+2024-01-15 10:00:03 [INFO] Connected to database
+2024-01-15 10:00:05 [WARN] Cache miss for key: user_123
+2024-01-15 10:00:06 [ERROR] Failed to connect to external API: timeout
+2024-01-15 10:00:07 [INFO] Retrying connection...
+2024-01-15 10:00:08 [ERROR] Connection failed after 3 retries
+2024-01-15 10:00:09 [FATAL] Application shutting down due to critical error
+2024-01-15 10:00:10 [DEBUG] Cleanup complete
+2024-01-15 10:00:11 [INFO] Goodbye!
